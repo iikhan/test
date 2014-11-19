@@ -6,7 +6,7 @@
    function send() 
 {
 	alert('hello i am going to call function');
-	var url = "http://www.w3schools.com/webservices/tempconvert.asmx/CelsiusToFahrenheit";
+	var url = "http://smartapp.somee.com/service1.asmx/InsertCommand";
 	
 	var http;
  if (window.XMLHttpRequest)
@@ -22,7 +22,7 @@
 	//var http = new XMLHttpRequest();
 	alert('object init');
 	//var url = "get_data.php";
-	var params = "Celsius=5";
+	var params = "cmd=RemoteREBOOT";
 	http.open("POST", url, true);
 	alert('req sent1');
 //Send the proper header information along with the request
