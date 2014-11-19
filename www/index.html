@@ -6,8 +6,8 @@
    function send() 
 {
 	alert('hello i am going to call function');
-	var url = "http://smartapp.somee.com/service1.asmx/InsertCommand";
-	
+	var url = "http://smartapp.somee.com/Service1.asmx/InsertCommand";
+	//var url ="http://localhost:4877/Service1.asmx/InsertCommand"
 	var http;
  if (window.XMLHttpRequest)
    {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -20,13 +20,14 @@
 	
 	//alert(new XMLHttpRequest());
 	//var http = new XMLHttpRequest();
-	alert('object init');
+	alert('object init1');
 	//var url = "get_data.php";
-	var params = "cmd=RemoteREBOOT";
+	var params = "cmd=REMOTE_REBOOT";
 	http.open("POST", url, true);
-	alert('req sent1');
+	alert('req sent12');
 //Send the proper header information along with the request
- http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	//http.setRequestHeader("Content-type", "application/json");
 	//http.setRequestHeader("Content-length", params.length);
 	//http.setRequestHeader("Connection", "close");
  
