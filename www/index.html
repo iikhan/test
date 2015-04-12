@@ -1,12 +1,17 @@
-<html>  
-<head>   
- <title>Contact Example</title> 
-   <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>  
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>  
 <script type="text/javascript">
    function send() 
 {
 	alert('hello i am going to call function');
-	var url = "http://smartapp.somee.com/Service1.asmx/InsertCommand";
+	var url = "http://www.ccms.somee.com/Service1.asmx/InsertCommand";
 	//var url ="http://localhost:4877/Service1.asmx/InsertCommand"
 	var http;
  if (window.XMLHttpRequest)
@@ -40,12 +45,82 @@
 			//alert(http.readyState );
 	}
 	http.send(params);
-}
+
+	
+	
+	
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+        alert(xhr.responseText);
+    }
+	}
+	xhr.open('GET', 'http://www.ccms.somee.com/Service1.asmx/GetCommand', true);
+	xhr.send(null);
+	
+	
+	
+	
+	
+	}
 </script>
 
- </head>  <body>
+</head>
 
-        <p>The simplest example you can imagine (but maybe not the most fanciful...):</p>
-        <input type="button" value="Say &quot;Hello world&quot;" onclick="send();" />
+<body>
 
-</body></html>
+<!-- Start of first page -->
+<div data-role="page" id="foo">
+
+	<div data-role="header">
+		<h1>CCMS Remote App Login</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<p>Please login with the credentials provided.</p>
+		User :<input type ="text" id="txtUserName"/>
+		Password :<input type ="text" id="txtPassword"/>
+			<p><a href="#bar">Login</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>2014 NCR Corporation</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div data-role="page" id="bar">
+
+	<div data-role="header">
+		<h1>Remote Commands</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<ul data-role="listview">   
+			<li><a onclick="send();">Restart</a></li>  
+			<li><a onclick="send();">Cash Counts</a></li>  
+			<li><a onclick="send();">Running Process</a></li>  
+			<li><a onclick="send();">Running Services</a></li>  
+			<li><a onclick="send();">Remote Supervisor</a></li>  
+			<li><a onclick="send();">Clear Cash</a></li>  
+			<li><a onclick="send();">Print Counters</a></li>  
+			<li><a onclick="send();">Start Service</a></li>  
+			<li><a onclick="send();">Stop Service</a></li>  
+			<li><a onclick="send();">Init Receipt</a></li>  
+			<li><a onclick="send();">Init BNA</a></li>  
+			<li><a onclick="send();">Exit Supervisor(In Service)</a></li>  
+			
+			
+			
+			
+		 	</ul>	
+		
+		<p><a href="#foo">Back</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>2014 NCR Corporation</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+</html>
