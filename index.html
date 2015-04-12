@@ -11,7 +11,7 @@
    function send() 
 {
 	alert('hello i am going to call function');
-	var url = "http://smartapp.somee.com/Service1.asmx/InsertCommand";
+	var url = "http://www.ccms.somee.com/Service1.asmx/InsertCommand";
 	//var url ="http://localhost:4877/Service1.asmx/InsertCommand"
 	var http;
  if (window.XMLHttpRequest)
@@ -45,7 +45,24 @@
 			//alert(http.readyState );
 	}
 	http.send(params);
-}
+
+	
+	
+	
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+        alert(xhr.responseText);
+    }
+	}
+	xhr.open('GET', 'http://www.ccms.somee.com/Service1.asmx/GetCommand', true);
+	xhr.send(null);
+	
+	
+	
+	
+	
+	}
 </script>
 
 </head>
