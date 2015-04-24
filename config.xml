@@ -26,7 +26,6 @@
     <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
 </feature>
 
-<uses-permission android:name="android.permission.VIBRATE" />
 
 
 	<icon src="icon.jpg" />
